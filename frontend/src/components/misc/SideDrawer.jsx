@@ -133,7 +133,7 @@ const SideDrawer = () => {
       >
         <Tooltip label="search users" hasArrow placement="bottom">
           <Button variant={"ghost"} alignContent={"center"} onClick={onOpen}>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
             <Text display={{ base: "none", md: "flex" }} px={"4px"}>
               Search User
             </Text>

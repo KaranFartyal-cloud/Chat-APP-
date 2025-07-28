@@ -1,4 +1,6 @@
+import { ViewIcon } from "@chakra-ui/icons";
 import {
+  Box,
   Button,
   Image,
   Modal,
@@ -11,6 +13,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+
 import React from "react";
 
 const ProfileModal = ({ user, children }) => {
@@ -18,7 +21,13 @@ const ProfileModal = ({ user, children }) => {
   return (
     <>
       {/* when we are receiving children it means we are receiving that my profile menu item element from side drawer.jsx */}
-      {children ? <span onClick={onOpen}>{children}</span> : <div>view</div>}
+      {children ? (
+        <Box onClick={onOpen}>{children}</Box>
+      ) : (
+        <Box onClick={onOpen}>
+          <ViewIcon height={5} cursor={"pointer"} />
+        </Box>
+      )}
       <Modal size="lg" onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>

@@ -125,7 +125,10 @@ const renameGroup = asyncHandler(async (req, res) => {
     {
       new: true, //by default mongo db returns old data before updating but here we set that return updated data
     }
-  );
+  )
+    .populate("users", "-password")
+    .populate("groupAdmin", "-password");
+
   // console.log(req.user);
   if (!upDatedChat) {
     res.status(400);
